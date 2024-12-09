@@ -1,3 +1,4 @@
+import Setting from "../view/Setting";
 @Entry
 @Component
 struct Running {
@@ -51,10 +52,13 @@ struct Running {
         .tabBar(this.tabBuilder('消息', 2, $r('app.media.Message_s'),$r('app.media.Message')))
 
         TabContent() {
-          Text('我的').fontSize(30)
-
-
+          Setting()
         }
+        .padding({
+          left: '12vp',
+          right: '12vp'
+        })
+        .backgroundColor('#F1F3F5')
         .tabBar(this.tabBuilder('我的', 3, $r('app.media.Mine_s'),$r('app.media.Mine')))
       }
       .scrollable(false)
