@@ -1,0 +1,13 @@
+{
+  "app":{
+    "running":"$media:running",
+    "matchRunning": "$media:matchRunning",
+    "Mine": "$media:Mine",
+    "Post": "$media:Post",
+    "Message": "$media:Message",
+    "matchRunning_s": "$media:matchRunning_s",
+    "Mine_s": "$media:Mine_s",
+    "Post_s": "$media:Post_s",
+    "Message_s": "$media:Message_s"
+  }
+}
