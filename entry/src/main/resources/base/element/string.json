@@ -133,6 +133,10 @@
       "value": "Menu Settings"
     },
     {
+      "name": "friend",
+      "value": "friend"
+    },
+    {
       "name": "about",
       "value": "About"
     },

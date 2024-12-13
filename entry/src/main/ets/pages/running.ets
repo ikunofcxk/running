@@ -1,4 +1,7 @@
 import Setting from "../view/Setting";
+
+import MessageView from "../view/Post";
+import Message from "../view/Message";
 @Entry
 @Component
 struct Running {
@@ -42,12 +45,12 @@ struct Running {
         .tabBar(this.tabBuilder('匹配约跑', 0, $r('app.media.matchRunning_s'),$r('app.media.matchRunning')))
 
         TabContent() {
-          Text('动态').fontSize(30)
+          MessageView()
         }
         .tabBar(this.tabBuilder('动态', 1, $r('app.media.Post_s'),$r('app.media.Post')))
 
         TabContent() {
-          Text('消息').fontSize(30)
+          Message()
         }
         .tabBar(this.tabBuilder('消息', 2, $r('app.media.Message_s'),$r('app.media.Message')))
 
