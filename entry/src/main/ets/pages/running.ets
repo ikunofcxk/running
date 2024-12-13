@@ -2,6 +2,7 @@ import Setting from "../view/Setting";
 
 import MessageView from "../view/Post";
 import Message from "../view/Message";
+import Match from "../view/Match";
 @Entry
 @Component
 struct Running {
@@ -38,9 +39,7 @@ struct Running {
         controller:this.tabsController
       }) {
         TabContent() {
-          Text('cc').fontSize(30)
-
-
+          Match()
         }
         .tabBar(this.tabBuilder('匹配约跑', 0, $r('app.media.matchRunning_s'),$r('app.media.matchRunning')))
 

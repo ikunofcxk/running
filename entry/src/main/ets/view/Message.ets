@@ -32,7 +32,6 @@ export default struct MessageList {
       if (item.unread) {
         Text('未读')
           .fontSize('12fp')
-          //./color('#FF0000')
           .margin({
             right: '16vp'
           })
@@ -50,14 +49,13 @@ export default struct MessageList {
   build() {
     Column() {
       Text('我的信息')
-        .fontSize('20fp')
-        .fontWeight(FontWeight.Bold)
-        .margin({
-          top: '16vp',
-          bottom: '16vp',
-          left: '16vp',
-          right: '16vp'
-        })
+        .fontSize(24)
+        .fontWeight(700)
+        .width('100%')
+        .textAlign(TextAlign.Start)
+        .padding({ left: 16 })
+        .fontFamily('HarmonyHeiTi-Bold')
+        .lineHeight(33)
 
       Scroll() {
         List({
