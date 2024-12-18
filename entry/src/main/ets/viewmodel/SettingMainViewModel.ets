@@ -32,9 +32,11 @@ export class MainViewModel {
         new ItemData(0, $r('app.string.setting_list_news'), $r('app.media.news'), $r("app.string.setting_toggle"))
       ],
 
+
+
       [
         new ItemData(3, $r('app.string.clear_cache'), $r('app.media.storage')),
-        new ItemData(4, $r('app.string.setting_list_privacy'), $r('app.media.person_shield')),
+        new ItemData(1,  $r('app.string.set_runningtimes'), $r('app.media.menu')),
       ],
       [
         new ItemData(5, $r('app.string.setting_list_about'), $r('app.media.about'))

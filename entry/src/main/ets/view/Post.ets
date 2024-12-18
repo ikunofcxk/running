@@ -164,10 +164,10 @@ struct EnablementItem {
 @Component
 struct TutorialView {
   @State tutorialList: Array<ArticleClass> = [
-    new ArticleClass('1', $r('app.media.fig4'), '我太喜欢乐跑了',
+    new ArticleClass('1', '我太喜欢乐跑了',
       '步道乐跑，那是一种让人沉醉的运动，一旦爱上，便无法自拔。每当踏上那片充满活力的跑道，我的心情便如阳光般明媚。乐跑，已成为我生活中不可或缺的一部分，那份热爱，早已深入骨髓。',
       'https://developer.huawei.com/consumer/cn/forum/home?all=1'),
-    new ArticleClass('2', $r('app.media.chicken'), '能不能别黑我家咯咯了',
+    new ArticleClass('2',  '能不能别黑我家咯咯了',
       '你干嘛哎呦',
       'https://developer.huawei.com/consumer/cn/forum/home?all=1'),
   ];

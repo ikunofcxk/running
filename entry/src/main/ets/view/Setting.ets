@@ -1,6 +1,8 @@
 
 import ItemData from '../viewmodel/SettingItemData';
 import mainViewModel from '../viewmodel/SettingMainViewModel';
+import { router } from '@kit.ArkUI';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 /**
  * Setting tab content
@@ -106,6 +108,15 @@ export default struct Setting {
           .margin({ bottom: '16vp' })
       }
       .height('100%')
+      .onClick(()=>{
+        router.pushUrl({ url: 'pages/index' }).then(() => {
+          console.info('退出登录.')
+
+        }).catch((err: BusinessError) => {
+          console.error(`Failed to jump to the second page. Code is ${err.code}, message is ${err.message}`)
+        })
+      }
+      )
     }
     .width('100%')
     .height('100%')

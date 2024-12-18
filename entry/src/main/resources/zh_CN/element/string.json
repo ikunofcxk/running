@@ -315,6 +315,10 @@
     {
       "name": "Tab_Bar_Two",
       "value": "我的"
+    },
+    {
+      "name": "set_runningtimes",
+      "value": "设置跑步次数"
     }
   ]
 }

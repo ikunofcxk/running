@@ -319,6 +319,10 @@
     {
       "name": "Tab_Bar_Two",
       "value": "Mine"
+    },
+    {
+      "name": "set_runningtimes",
+      "value": "set_runningtimes"
     }
   ]
 }
