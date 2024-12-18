@@ -1,6 +1,6 @@
 
-import ItemData from '../viewmodel/ItemData';
-import mainViewModel from '../viewmodel/MainViewModel';
+import ItemData from '../viewmodel/SettingItemData';
+import mainViewModel from '../viewmodel/SettingMainViewModel';
 
 /**
  * Setting tab content
