@@ -1,88 +1,143 @@
 //import { List, ListItem, Text, Row, Column, Image, VerticalAlign, HorizontalAlign, FontWeight } from '@ohos.ace.ability';
 import MessageData from '../viewmodel/MessageData';
-import MessageViewModel from '../viewmodel/MessageViewModel';
 
+import { router } from '@kit.ArkUI';
+import ListChatItem, { ChatItemData } from '../component/ListChatItem'
 @Entry
 @Component
 export default struct MessageList {
-  @Builder
-  messageCell(item: MessageData) {
-    Row() {
-      Image(item.img)
-        .objectFit(ImageFit.Cover)
-        .height('50vp')
-        .width('50vp')
-        .margin({
-          left: '16vp',
-          right: '12vp'
-        })
-      Column() {
-        Text(item.title)
-          .fontSize('16fp')
-          .fontWeight(FontWeight.Bold)
-        Text(item.content)
-          .fontSize('14fp')
-          .maxLines(1)
-        Text(item.time)
-          .fontSize('12fp')
-      }
-      .flexGrow(1)
-      .alignItems(HorizontalAlign.Start)
-
-      if (item.unread) {
-        Text('未读')
-          .fontSize('12fp')
-          .margin({
-            right: '16vp'
-          })
-      }
+  @State chatList: ChatItemData[] = [
+    {
+      headSrc: $r("app.media.menu"),
+      nickname: "系统通知",
+      content: "更新完成",
+      time: "17:21"
+    },
+    {
+      headSrc: $r("app.media.simple_pig"),
+      nickname: "猪",
+      content: "",
+      time: "15:38"
+    },
+    {
+      headSrc: $r("app.media.hihi"),
+      nickname: "牢妹",
+      content: "哥哥哥哥，有急事",
+      time: "刚才"
+    },
+  {
+    headSrc: $r("app.media.hihi"),
+    nickname: "牢妹的小号",
+     content: "快回我信息！",
+      time: "刚才"
+  },{
+      headSrc: $r("app.media.hihi"),
+      nickname: "牢妹的小小号",
+      content: "真不骗你，急事啊啊啊啊啊",
+      time: "刚才"
+  },{
+    headSrc: $r("app.media.hihi"),
+    nickname: "牢妹的小3号",
+    content: "求你了回我个消息",
+    time: "刚才"
+  },
+    {
+      headSrc: $r("app.media.daijinbao"),
+      nickname: "客户代金保",
+      content: "这是我们公司的报价，希望您能考虑下",
+      time: "昨天"
+    },
+    {
+      headSrc: $r("app.media.zhaoquan"),
+      nickname: "赵经理",
+      content: "天凉注意填衣",
+      time: "17:21"
+    },
+    {
+      headSrc: $r("app.media.hihi"),
+      nickname: "牢妹",
+      content: "哥哥哥哥，有急事",
+      time: "刚才"
+    },
+    {
+      headSrc: $r("app.media.hihi"),
+      nickname: "牢妹",
+      content: "哥哥哥哥，有急事",
+      time: "刚才"
     }
-    .width('100%')
-    .height('80vp')
-    .alignItems(VerticalAlign.Center)
-    .padding({
-      top: '8vp',
-      bottom: '8vp'
-    })
-  }
 
+  ]
   build() {
     Column() {
       Text('我的信息')
         .fontSize(24)
-        .fontWeight(700)
+        .fontWeight(400)
         .width('100%')
         .textAlign(TextAlign.Start)
-        .padding({ left: 16 })
+        .padding({ left: 16, top: 8 })
         .fontFamily('HarmonyHeiTi-Bold')
         .lineHeight(33)
 
       Scroll() {
-        List({
-          space: 8,
-        }) {
-          ForEach(MessageViewModel.getMessageListData(), (item: MessageData) => {
+        List() {
+          ForEach(this.chatList, (item: ChatItemData) => {
             ListItem() {
-              this.messageCell(item)
+              ListChatItem({ data: item })
             }
-            .backgroundColor('#F0F0F0') // 设置列表项的背景颜色
+            .onClick(() => {
+              router.pushUrl({
+                url: 'pages/chat/ChatPage',
+                params: {
+                  name: item.nickname,
+                  headSrc: item.headSrc
+                }
+              })
+            })
           })
+          ListItem() {
+            Divider().color(Color.Transparent).strokeWidth(0)
+          }
         }
-        .scrollBar(BarState.Off)
-        .width('100%')
-        .height('100%')
+
         .divider({
-          strokeWidth: '1vp',
-          color: '#E0E0E0'
+          strokeWidth: 0.8,
+          color: '#f0f0f0',
+          startMargin: 90,
+          endMargin: 0
         })
-        .backgroundColor('#F0F0F0') // 设置列表的背景颜色
+        .backgroundColor(Color.White)
+        .layoutWeight(1)
+        .padding({ left: 0, right: 0, top: 0, bottom: 0 });
       }
-      .width('100%')
-      .height('100%')
-      .backgroundColor('#F0F0F0') // 设置整个滚动区域的背景颜色
+      .width("100%")
+      .height("100%")
+      .backgroundColor("#EDEDED")
+      .padding({ left: 0, right: 0, top: 0, bottom: 0 });
+
+
+
     }
     .width('100%')
     .height('100%')
     .backgroundColor('#F0F0F0')
+    .padding({ left: 0, right: 0, top: 0, bottom: 0 });
   }
+
+  navigateTo(url: string) {
+    switch (url) {
+      case 'pages/contact/GroupChatPage':
+        this.navigateToCreateGroup()
+        break
+      default:
+        console.error(`Unknown page: ${url}`)
+    }
+  }
+
+  private navigateToCreateGroup() {
+    router.pushUrl({ url: 'pages/contact/GroupChatPage'})
+  }
+
+
+
+
 }

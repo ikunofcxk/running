@@ -1,8 +1,10 @@
 import Setting from "../view/Setting";
 
-import MessageView from "../view/Post";
+
 import Message from "../view/Message";
-import Match from "../view/Match";
+
+import { router } from "@kit.ArkUI";
+
 @Entry
 @Component
 struct Running {
@@ -38,20 +40,38 @@ struct Running {
       Tabs({ barPosition: BarPosition.End,
         controller:this.tabsController
       }) {
-        TabContent() {
-          Match()
-        }
-        .tabBar(this.tabBuilder('匹配约跑', 0, $r('app.media.matchRunning_s'),$r('app.media.matchRunning')))
 
-        TabContent() {
-          MessageView()
-        }
-        .tabBar(this.tabBuilder('动态', 1, $r('app.media.Post_s'),$r('app.media.Post')))
 
         TabContent() {
           Message()
         }
-        .tabBar(this.tabBuilder('消息', 2, $r('app.media.Message_s'),$r('app.media.Message')))
+        .tabBar(this.tabBuilder('消息', 0, $r('app.media.Message_s'),$r('app.media.Message')))
+
+        TabContent() {
+          Column() {
+            // 图片
+            Button({ type: ButtonType.Circle }) {
+              Image($r('app.media.running'))
+                .width(90)
+                .height(90)
+            }
+            // 文字
+            Text('点击分享心情给朋友')
+              .fontSize(14)
+              .margin({ top: 5 }) // 设置文字与图片的间距
+          }
+          .onClick(()=>{
+            router.pushUrl({
+              url:"pages/Moment/MomentPage"
+            })
+          })
+          .alignItems(HorizontalAlign.Center) // 设置容器内元素水平居中对齐
+          .width('100%') // 设置容器宽度为100%
+          .height('50%') // 设置容器高度为100%
+
+        }
+        .tabBar(this.tabBuilder('动态', 1, $r('app.media.Post_s'),$r('app.media.Post')))
+
 
         TabContent() {
           Setting()
@@ -61,7 +81,7 @@ struct Running {
           right: '12vp'
         })
         .backgroundColor('#F1F3F5')
-        .tabBar(this.tabBuilder('我的', 3, $r('app.media.Mine_s'),$r('app.media.Mine')))
+        .tabBar(this.tabBuilder('我的', 2, $r('app.media.Mine_s'),$r('app.media.Mine')))
       }
       .scrollable(false)
     }

@@ -35,11 +35,11 @@ export class MainViewModel {
 
 
       [
-        new ItemData(3, $r('app.string.clear_cache'), $r('app.media.storage')),
-        new ItemData(1,  $r('app.string.set_runningtimes'), $r('app.media.menu')),
+        new ItemData(0, $r('app.string.clear_cache'), $r('app.media.storage')),
+
       ],
       [
-        new ItemData(5, $r('app.string.setting_list_about'), $r('app.media.about'))
+        new ItemData(0, $r('app.string.setting_list_about'), $r('app.media.about'))
       ]
     ];
     return settingListData;

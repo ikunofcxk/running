@@ -323,6 +323,18 @@
     {
       "name": "set_runningtimes",
       "value": "set_runningtimes"
+    },
+    {
+      "name": "username",
+      "value": "不喝饮料"
+    },
+    {
+      "name": "othername1",
+      "value": "张菊"
+    },
+    {
+      "name": "othername2",
+      "value": "坤坤"
     }
   ]
 }

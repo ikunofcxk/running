@@ -10,7 +10,7 @@ struct Index {
         .width('600px')
         .margin({ top: 140 });
 
-      Text("点击开始约跑北操之旅")
+      Text("点击开始")
         .fontSize(24)
         .fontWeight('bold') // 加粗字体
         .margin({ top: 180 });
@@ -19,7 +19,7 @@ struct Index {
     .width("100%")
     .onClick(() => {
       // 直接在点击事件中调用router.push进行页面跳转
-      router.pushUrl({ url: 'pages/running' }).then(() => {
+      router.pushUrl({ url: 'pages/LoginPage/shouye' }).then(() => {
         console.info('Succeeded in jumping to the second page.')
 
       }).catch((err: BusinessError) => {

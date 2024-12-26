@@ -1,6 +1,21 @@
 {
   "src": [
     "pages/Index",
-    "pages/running"
+    "pages/main",
+    "pages/LoginPage/shouye",
+    "pages/LoginPage/LoginPage",
+    "pages/LoginPage/PasswordLogin",
+    "pages/LoginPage/PasswordPage",
+
+    "pages/Moment/MomentPage",
+    "pages/Moment/mineMomentPage",
+
+    "pages/Moment/ProfilePage",
+    "pages/Moment/SelfMoment",
+    "pages/Moment/CreateMomentPage",
+
+    "pages/chat/ChatPage"
+
+
   ]
 }
